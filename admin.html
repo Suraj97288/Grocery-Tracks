@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/style.css">
+  <title>Grocery Tracks! Admin</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg  topbar">
+    <img class="logo" src="../static/images/logo-transparent-png.png">
+    <h1 class="heading">Admin</h1>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form class="form-inline my-2 my-lg-0 " action="/searchadm" method="POST">
+        <input class="form-control mr-sm-2 class" name = 'search' id="searchbaradm" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn my-2 my-sm-0 srchbtn" type="submit">Search</button>
+        <a href="/add_item" class="btn  my-2 my-sm-0 addbtn" type="button">Add Items or Category</a>
+        <a class="navitem" href="/">Logout</a>
+      </form>
+
+    </div>
+  </nav>
+
+  <div class="crimg">
+    <h1 class="bnheading">Feed Your Family</h1>
+    <h1 class="bnheading2">The Best</h1>
+  </div>
+  <br>
+  <div class="col-2">
+    <h3>Section/Category</h3>
+  </div>
+
+  <div class="d-flex flex-row">
+    {% for cat in cats %}
+    <div class="category">
+      <br>
+      <img class=catimg src="{{cat.cat_image}}">
+      <br>
+      <br>
+      <div class="row-4 catname">
+        <h6>{{cat.cat_name}}</h6>
+      </div>
+
+      <button type="button" class="btn btn-outline-danger catdelbtn" data-bs-toggle="modal"
+        data-bs-target="#confirm-{{cat.cat_id}}">Delete</button>
+
+      <div class="modal fade" id="confirm-{{cat.cat_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h6 class="modal-title fs-5" id="exampleModalLabel">Confirmation</h6>
+            </div>
+            <div class="modal-body text-left">
+              <p style="color: red;">Deleting a Catagory will delete all the items alinged to that catagory.</p>
+              Are You Sure You Want to Delete?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Close</button>
+              <a href='/deletecat/{{cat.cat_name}}' type="button" class="btn btn-outline-danger">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="/updatecat/{{cat.cat_id}}" type="button" class="btn catupdtbtn">Update</a>
+    </div>
+    {% endfor %}
+  </div>
+  <br>
+  <div class="col-2">
+    <h3>Products</h3>
+  </div>
+  <div class="row d-flex flex-wrap-row-reverse content">
+    {% for item in items %}
+    <div class="p-2">
+      <div class="row-4">
+        <h5 class="itemname" id="item_name">{{item.item_name}}</h5>
+      </div>
+      <div class="itemdet"><img class=itemimg src="{{item.item_image}}"></div>
+      <div class="item">
+        <div class="row my-2">
+          <div class="col-8 text-left">
+            <h7>{{item.item_cat}}</h7>
+          </div>
+          <div class="col text-right">
+            <h7>Qty: {{item.item_qty}}</h7><br>
+          </div>
+        </div>
+        <div class="row my-2">
+          <div class="col">
+            <h5><b>Rs {{item.item_price}}</b></h5>
+          </div>
+          <div class="col text-left">
+            <h7>Expiry: {{item.item_exp}}</h7>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-outline-danger delbtn" data-bs-toggle="modal"
+          data-bs-target="#confirmpro-{{item.item_id}}">Delete</button>
+          <div class="modal fade" id="confirmpro-{{item.item_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h6 class="modal-title fs-5" id="exampleModalLabel">Confirmation</h6>
+                </div>
+                <div class="modal-body text-left">
+                  <p style="color: red;">Are You Sure You Want to Delete?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Close</button>
+                  <a href='/delete/{{item.item_id}}' type="button" class="btn btn-outline-danger">Delete</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        <a href="/update/{{item.item_id}}" type="button" class="btn mx-4 updtbtn">Update</a>
+
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/style.css">
+  <title>Grocery Tracks!</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg  topbar">
+    <img class="logo" src="../static/images/logo-transparent-png.png">
+    <h1 class="heading">Welcome {{firstname}}</h1>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form class="form-inline my-2 my-lg-0 " action="/search" method="POST">
+        <input class="form-control mr-sm-2 class" name = 'search' id="searchbar" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn my-2 my-sm-0 srchbtn" type="submit">Search</button>
+        <a href="/cart" class="btn  my-2 my-sm-0 cartbtn" type="submit">My Cart</a>
+        <a class="navitem" href="/">Logout</a>
+      </form>
+
+    </div>
+
+  </nav>
+
+  <div class="crimg">
+    <h1 class="bnheading">Feed Your Family</h1>
+    <h1 class="bnheading2">The Best</h1>
+  </div>
+  <br>
+  <div class="col">
+    <h3>Section/Category</h3>
+  </div>
+
+  <div class="d-flex flex-row">
+    {% for cat in cats %}
+    <div class="maincategory">
+      <br>
+      <img class=catimg src="{{cat.cat_image}}">
+      <br>
+      <br>
+      <h6>{{cat.cat_name}}</h6>
+    </div>
+    {% endfor %}
+  </div>
+  <br>
+  <div class="col-2">
+    <h3>Products</h3>
+  </div>
+  <div class="row d-flex flex-wrap-row-reverse content">
+    {% for item in items %}
+    <div class="p-2">
+      <div class="row-4">
+        <h5 class="itemname" id="item_name">{{item.item_name}}</h5>
+      </div>
+      <div class="itemdet"><img class=itemimg src="{{item.item_image}}"></div>
+      <div class="item">
+        <br>
+        <div class="row my-2">
+          <div class="col">
+            <h5><b>Rs {{item.item_price}}</b></h5>
+          </div>
+          <div class="col text-right">
+            <h7>MFD: {{item.item_mfd}}</h7>
+          </div>
+        </div>
+        <div class="row my-2">
+          <div class="col-5 text-left">
+            <h7>Qty Left : {{item.item_qty}}</h7><br>
+          </div>
+          <div class="col-7 text-right">
+            <h7>Exp.Date: {{item.item_exp}}</h7>
+          </div>
+        </div>
+        {% if item.item_qty == 0 %}
+          <h3 style="color: red;">Out of Stock</h3>
+        {% else %}
+          <form action="/addtocart/{{item.item_id}}" method="POST">
+            <div class="row">
+              <div class="col qtycol">
+                <div class="form- group">
+                  <input type="text" name="cqty" class="form-control  cartqty" aria-describedby="emailHelp"
+                    placeholder="Quantity" required>
+                </div>
+              </div>
+              <div class="col">
+                <button type="submit" class="btn updtbtn">Add to Cart</button>
+              </div>
+            </div>
+          </form>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>

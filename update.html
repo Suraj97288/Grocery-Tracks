@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/style.css">
+  <title>Grocery Tracks! Update Item</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg  topbar">
+    <img class="logo" src="../static/images/logo-transparent-png.png">
+
+    <h1 class="heading">Admin</h1>
+
+    <div class=" navlist3">
+      <a class="navitem" href="/admin">Home</a>
+      <a class="navitem" href="/">Logout</a>
+    </div>
+  </nav>
+
+  <div class="col-12 itembox">
+    <form action="/update/{{item.item_id}}" method='POST' class="regform">
+      <header class="Logintag">Update Item</header>
+
+      <div class="fntag">
+        <label class="label">Item Name</label>
+        <input type="text" class="myinput" value="{{item.item_name}}" name="item_name" placeholder="Item Name" required>
+      </div>
+
+      <div class="lntag">
+        <label class="label">Category</label>
+        <select class="selectpicker myinput" value={{item.item_cat}} name="item_cat" data-live-search="true">
+          {% for cat in category%}
+          <option>{{cat[0]}}</option>
+          {%endfor%}
+        </select>
+      </div>
+
+      <div class="pri">
+        <label class="label">Item Price</label>
+        <input type="Float" class="myinput" value="{{item.item_price}}" name="item_price" placeholder="Item Price"
+          required>
+      </div>
+
+      <div class="qty">
+        <label class="label">Item Quantity</label>
+        <input type="Float" class="myinput" value="{{item.item_qty}}" name="item_qty" placeholder="Item Quantity"
+          required>
+      </div>
+
+      <div class="mfdate">
+        <label class="label">Manufacture Date</label>
+        <input type="date" class="myinput" value="{{item.item_mfd}}" name="item_mfd" placeholder="Manufacture Date"
+          required>
+      </div>
+
+      <div class="expdate">
+        <label class="label">Expiry Date</label>
+        <input type="date" class="myinput" value="{{item.item_exp}}" name="item_exp" placeholder="Expiry Date" required>
+      </div>
+
+      <div class="lntag">
+        <label class="label">Item Image</label>
+        <input type="text" class="myinput" value="{{item.item_image}}" name="item_image" placeholder="Item Image">
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary mt-3 sbtbtn">Update</button>
+    </form>
+
+  </div>
+  </div>
+
+  </div>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
