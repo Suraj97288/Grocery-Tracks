@@ -1,0 +1,482 @@
+.bg{
+    background-image: url('../static/images/BackGround.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+}
+
+.leftbox{
+    height: 650px;
+    margin-top: 65px;
+    margin-left: 150px;
+    border-top-left-radius: 100px;
+    background-image: url("../static/images/logo-transparent-png.png");
+    background-position: 50%;
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-color: #00BFB2;
+    box-shadow: 20px 50px 100px;
+
+}
+.rightbox{
+    
+    border-bottom-right-radius: 100px;
+    background-color: #efefefe7;
+    height: 650px;
+    margin-top: 65px; 
+}
+
+.sbtbtn{
+    margin-top: 25px;
+    background-color:#00BFB2;
+    border-color: black;
+    height: 50px;
+    width: 140px;
+    color:black;
+    font-weight: bold ;
+    border-style: double;
+    border-radius: 25px;
+    border-width: 2px; 
+}
+
+.sbtbtn:hover{
+    background-color:black;
+    border-color:#00BFB2;
+    color:#efefefe7;
+}
+
+.sbtbtn:focus{
+    background-color:#00BFB2;
+    font-weight: bold;
+    border-color: black;
+    border-width: 2px;
+    color:black;
+}
+
+.Loginform{
+    margin-top: 90px;
+    text-align:center;
+    position: relative;
+}
+
+.regform{
+    margin-top: 10px;
+    text-align:center;
+    position: relative;
+}
+
+.Logintag{
+    color:#00BFB2;
+    text-align: center;
+    font-weight: bold;
+    font-size: 45px;
+}
+
+.passtag{
+    margin-right: 45px;
+}
+
+.label{
+    font-weight: bold;
+    font-size: 25px;
+    font-family: Courier, monospace;
+}
+
+.myinput{
+    background-color: transparent;
+    border-color: #00BFB2;
+    border-radius: 10px;
+    height: 40px;
+    margin-left: 15px;
+    margin-top: 25px;
+    width: 300px;
+}
+
+.fntag{
+    margin-right: 75px;
+}
+
+.lntag{
+    margin-right: 60px;
+}
+
+.linktag{
+    color:#00BFB2;
+    text-decoration: none;
+}
+.linktag:hover{
+    color:black;
+    text-decoration: none;
+    border-bottom: 3px solid #00BFB2;
+    
+}
+
+.trantolosi{
+    margin-top: 25px;
+    text-align: center;
+}
+
+.selectinput{
+    background-color: transparent;
+    border-color: #00BFB2;
+    border-radius: 10px;
+    height: 40px;
+    margin-left: 10px;
+    margin-right: 35px;
+    margin-top: 25px;
+    width: 200px;
+    border-width: 2px;
+}
+.topbar{
+    background-color: #00BFB2;
+}
+
+#searchbar{
+    width: 400px;
+    margin-left:250px;
+    border-color: #5f6368;
+}
+
+#searchbaradm{
+    width: 400px;
+    margin-left:375px;
+    border-color: #5f6368;
+}
+.logo{
+    height: 80px;
+    
+}
+
+.logo2{
+    height: 70px;
+}
+
+.srchbtn{
+    background-color: #5f6368;
+    color: white;
+    border-color: black;
+    font-weight: bold;
+}
+
+.srchbtn:hover{
+    background-color:#00BFB2;
+    color:black;
+}
+
+.crimg{
+    background-image: url("../static/images/banner1.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    width: 100wh;
+}
+
+.bnheading{
+    font-size: 45px;
+    color: white;
+    font-family: cursive;
+    font-weight: bolder;
+    margin-left: 330px;
+    padding-top: 100px;
+}
+
+.heading{
+    font-size: 40px;
+    color:black;
+    font-weight: bolder;
+    margin-left: 30px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.bnheading2{
+    font-size: 130px;
+    color:#00BFB2;
+    font-family: cursive;
+    font-weight: bolder;
+    margin-left: 150px;
+
+}
+
+.cartbtn{
+    background-color: transparent;
+    color: white;
+    border-color: black;
+    font-weight: bold;
+    height: 55px;
+    width: 180px;
+    background-image: url("../static/images/cart.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    margin-left: 25px;
+    text-align: right;
+    font-size: 21px;
+}
+
+.addbtn{
+    background-color: transparent;
+    color: white;
+    border-color: black;
+    font-weight: bold;
+    height: 70px;
+    width: 190px;
+    background-image: url("../static/images/additem.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    margin-left: 45px;
+    margin-right: 15px;
+    text-align: right;
+    font-size: 18px;
+}
+
+.cartbtn:hover{
+    background-color: transparent;
+    color:black;
+    border-color: black;
+    font-weight: bold;
+    
+}
+.p-2{
+    height: 420px;
+    width: 320px;
+    background-color: #efefefd8;
+    border: #00BFB2 solid 2px;
+    border-radius: 10px;
+    margin-left: 40px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.p-2:hover{
+    box-shadow: 0 0 10px  #5f6368;
+}
+
+.category{
+    height: 210px;
+    width: 150px;
+    margin-left: 15px;
+    text-align: center;
+}
+.category:hover{
+    border-radius: 20px;
+    box-shadow: 0 0 10px  #5f6368;
+}
+
+.maincategory{
+    height: 180px;
+    width: 140px;
+    margin-left: 15px;
+    text-align: center;
+}
+
+.maincategory:hover{
+    border-radius: 20px;
+    box-shadow: 0 0 10px  #5f6368;
+}
+
+.catname{
+    height: 45px;
+}
+
+.content{
+    text-align: center;
+    justify-content: left;
+    width: 1496px;
+    margin-left: 10px;
+}
+
+.itemimg{
+    width: 200px;
+    height: 200px;
+}
+
+.catimg{
+    width: 120px;
+    height: 80px;
+}
+
+.navlist{
+    margin-left: 800px;
+    font-size: 18px;  
+}
+
+.navlist2{
+    margin-left: 850px;
+    font-size: 18px;  
+}
+
+.navlist3{
+    margin-left: 1010px;
+    font-size: 18px;  
+}
+
+.cartnavlist{
+    margin-left: 980px;
+    font-size: 18px;  
+}
+.navitem{
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 23px;
+    font-weight: bolder; 
+}
+
+.navcat{
+    margin-right: 100px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 23px;
+    font-weight: bolder; 
+
+}
+.navcat:hover{
+    color:black; 
+}
+
+.navitem:hover{
+    color:black; 
+}
+
+.itemname{
+    height: 50px;
+}
+
+.qty{
+    margin-right: 135px;
+}
+
+.pri{
+    margin-right: 90px;
+}
+.mfdate{
+    margin-right: 182px;
+}
+
+.expdate{
+    margin-right: 105px;
+}
+
+#formFile{
+    background-color: transparent ;
+    border-color: #00BFB2 solid ;
+    height: 45px;
+    margin-left: 25px;
+    margin-top: 15px;
+    width: 300px;
+}
+
+.imgtag{
+    margin-right: 90px;
+}
+
+.itembox{
+    background-color: #efefefe7;
+    height: 700px;
+    width: 100wh;
+}
+
+
+.updtbtn{
+    background-color:none ;
+    border-color: #00BFB2;
+    color: #00BFB2;
+    border-width: 2px;
+}
+.updtbtn:hover{
+    background-color:#00BFB2 ;
+    color: white;
+    box-shadow: 0 0 10px  #5f6368;
+}
+
+.delbtn:hover{
+    box-shadow: 0 0 10px  #5f6368;
+}
+
+.buybtn{
+    width: 175px;
+    height: 68px;
+    text-align: left;
+    font-size: 30px;
+    border-color: red;
+    border-radius: 5px;
+    background-image: url(../static/images/delivery-truck.gif);
+    background-position: 70px;
+    background-size: 100px;
+    background-repeat: no-repeat;
+}
+
+.buybtn:hover{
+    box-shadow: 0 0 10px  #5f6368;
+    background-color: white;
+    color: black;
+}
+
+.cartcont{
+    justify-content: end;
+
+}
+
+
+.catdelbtn{
+    height: 25px;
+    width: 55px;
+    font-size: 10px;
+    text-align: center;
+}
+.catdelbtn:hover{
+    box-shadow: 0 0 10px  #5f6368;
+}
+
+.catupdtbtn{
+    height: 25px;
+    width: 55px;
+    font-size: 10px;
+    background-color:none ;
+    border-color: #00BFB2;
+    color: #00BFB2;
+    text-align: center;
+}
+
+.catupdtbtn:hover{
+    background-color:#00BFB2 ;
+    color: white;
+    box-shadow: 0 0 10px  #5f6368;
+}
+
+.col{
+    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+.cartitem{
+    height: 160px;
+    width: 900px;
+    margin-top: 10px;
+    margin-left: 20px;
+    border-bottom:#00BFB2 solid 2px;
+}
+.cartitem:hover{
+    box-shadow:rgba(0, 0, 0, 0.45) 0px 20px 20px -20px;;
+}
+
+.cartqty{
+    width: 90px;
+    background-color: transparent;
+    font-size: 15px;
+    text-align: center;
+    border-color:#5f6368;
+    border-width: 2px;
+    border-radius: 5px;
+    margin-left: 30px;
+}
+
+.cartimg{
+    width: 130px;
+    height: 120px;
+    margin-top: 15px;
+}
